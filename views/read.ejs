@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" </head>
+
+<body>
+
+    <div class="box">
+        <div class="nav">
+            <a href="/">Create user</a>
+        </div>
+        <h2><u>All Users:</u></h2>
+        <div class="contain">
+       <% if(user1.length>0){%>
+         <%user1.forEach(function(val){%>
+            <div class="user">
+                <div class="picture"><img src=" <%=val.url %> "> </div>
+                <h3><%= val.name %></h3>
+                <h5><%= val.email%></h5>
+                <div class="opt">
+                    <a href="/edit/<%=val._id%>" style="color: black;">Edit profile</a>
+                    <a href="/del/<%=val._id%>" style="color: red; margin-left: 16px;">Delete</a>
+                </div>
+
+            </div>
+
+        <% })%>
+     <%  } else{ %>
+      <h3>NO USERS YET!!!</h3>
+      <%} %>
+           
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
